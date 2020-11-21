@@ -1,0 +1,27 @@
+<configuration>
+    <appender name="SERVER-NETWORK" class="ch.qos.logback.core.FileAppender">
+        <file>server-network.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SERVER-USER_AUTH" class="ch.qos.logback.core.FileAppender">
+        <file>server-user_auth.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="please.help.network_part.Listener" >
+        <appender-ref ref="SERVER-NETWORK" />
+    </logger>
+
+    <logger name="please.help.UserAuthorizer">
+        <appender-ref ref="SERVER-USER_AUTH" />
+    </logger>
+
+    <root level="debug"> </root>
+</configuration>
